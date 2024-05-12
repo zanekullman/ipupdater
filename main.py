@@ -41,10 +41,11 @@ if __name__ == '__main__':
 
     
     extern_ip = requests.get('https://ident.me').text
+    print("Using {}".format(cred_file))
     with open(cred_file) as ifile:
         creds = json.load(ifile)
 
-    print("Pushing: {} : {}".format(host,extern_ip))
+    print("Pushing: {} : {}".format(creds['host'],extern_ip))
         
     push_url = "https://{0}:{1}@domains.google.com/nic/update?hostname={2}&myip={3}".format(
         creds['user'],
