@@ -37,6 +37,7 @@ def get_cred_file():
 if __name__ == '__main__':
     print("Starting")
     cred_file = get_cred_file()
+
     
     extern_ip = requests.get('https://ident.me').text
     
@@ -52,4 +53,5 @@ if __name__ == '__main__':
         host,
         extern_ip
     )
+    requests.get(push_url)
 
