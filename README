@@ -1,0 +1,6 @@
+Example Credential File
+{
+    "host": "example.com",
+    "user": "0000000",
+    "password": "11111111"
+}
