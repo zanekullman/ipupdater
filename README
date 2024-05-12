@@ -4,3 +4,6 @@ Example Credential File
     "user": "0000000",
     "password": "11111111"
 }
+
+Configure with Crontab to run periodically:
+*/5 * * * * cd ~/ipupdate/ && python3 main.py
