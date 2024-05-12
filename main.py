@@ -1,6 +1,7 @@
 import os
 import sys
 import requests
+import json
 from typing import TextIO
 
 
@@ -41,11 +42,8 @@ if __name__ == '__main__':
     
     extern_ip = requests.get('https://ident.me').text
     
-    ifile: TextIO
-    with open(cred_file, 'r') as ifile:
-        host = ifile.readline()
-        user = ifile.readline()
-        password = ifile.readline()
+
+    print("Pushing: {} : {}".format(host,extern_ip))
         
     push_url = "https://{0}:{1}@domains.google.com/nic/update?hostname={2}&myip={3}".format(
         user,
@@ -53,5 +51,5 @@ if __name__ == '__main__':
         host,
         extern_ip
     )
-    requests.get(push_url)
-
+    r=requests.get(push_url)
+    print(r.text)
